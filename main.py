@@ -10,8 +10,7 @@ class NoBalanceWalletFound(Exception):
 def generate_wallet_with_balance(attempts=10):
     for _ in range(attempts):
         # Generate a unique wallet name with a timestamp and random string
-        unique_name = f'my_wallet_{int(time.time())}_{"".join(
-            random.choices(string.ascii_letters, k=4))}'
+        unique_name = f'my_wallet_{int(time.time())}_{"".join(random.choices(string.ascii_letters, k=4))}'
 
         # Create a new wallet with the unique name
         wallet = Wallet.create(unique_name)
